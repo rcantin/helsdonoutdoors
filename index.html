@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="./scss/theme.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js" integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Cart Sample</title>
+    <script>
+    var app = angular.module("myApp", []);
+        app.controller("myCtrl", function ($scope) {
+            $scope.europeanretailers = [
+            {
+            country: "Austria",
+            links: [
+            {label : "Campz", url : "https://www.campz.at/helsdon-outdoors-helsdon-haengematte-M1241791.html?vgid=G1821004",},
+            ]
+            },
+            {
+            country: "Belgium",
+            links: [
+            {label : "Campz", url : "https://www.campz.be/helsdon-outdoors-helsdon-hammock-M1241791.html?vgid=G1821004",},
+            ]
+            },
+            {
+            country: "Denmark",
+            links: [
+            {label : "Campz", url : "https://www.campz.dk/helsdon-outdoors-helsdon-hammock-M1241791.html?vgid=G1821004",},
+            {label : "Outnorth", url : "https://www.outnorth.dk/helsdon-outdoors/helsdon-hammock#LightGreen",},
+            ]
+            },
+            {
+            country: "Finland",
+            links: [
+            {label : "Addnature", url : "https://www.addnature.fi/helsdon-outdoors-helsdon-hammock-M1241791.html?vgid=G1821004",},
+            {label : "Outdoorexperten", url : "https://www.outdoorexperten.fi/p-74518-helsdon-hammock.aspx",},
+            {label : "Outnorth", url : "https://www.outnorth.fi/helsdon-outdoors/helsdon-hammock#LightGreen",},
+            ]
+            },
+            {
+            country: "France",
+            links: [
+            {label : "Campz", url : "https://www.campz.fr/helsdon-outdoors-helsdon-hammock-M1241791.html?vgid=G1821004",},
+            ]
+            },
+            {
+            country: "Germany",
+            links: [
+            {label : "Campz", url : "https://www.campz.de/helsdon-outdoors-helsdon-haengematte-M1241791.html?vgid=G1821004",},
+            {label : "Outnorth", url : "https://www.outnorth.de/helsdon-outdoors/helsdon-hammock#LightGreen",},
+            ]
+            },
+            {
+            country: "Italy",
+            links: [
+            {label : "Addnature", url : "https://www.addnature.it/helsdon-outdoors-helsdon-amaca-M1241791.html?vgid=G1821004",},
+            ]
+            },
+            {
+            country: "Netherlands",
+            links: [
+            {label : "Campz", url : "https://www.campz.nl/helsdon-outdoors-helsdon-hammock-M1241791.html?vgid=G1821004",},
+            ]
+            },
+            {
+            country: "Norway",
+            links: [
+            {label : "Addnature", url : "https://www.addnature.no/helsdon-outdoors-helsdon-hammock-M1241788.html?vgid=G1821001",},
+            {label : "Outdoorexperten", url : "https://www.outdoorexperten.no/p-74518-helsdon-hammock.aspx",},
+            {label : "Outnorth", url : "https://www.outnorth.no/helsdon-outdoors/helsdon-hammock#LightGreen",},
+            ]
+            },
+            {
+            country: "Poland",
+            links: [
+            {label : "Addnature", url : "https://www.addnature.pl/helsdon-outdoors-helsdon-hammock-M1241791.html?vgid=G1821004",},
+            ]
+            },
+            {
+            country: "Spain",
+            links: [
+            {label : "Campz", url : "https://www.campz.es/helsdon-outdoors-helsdon-hammock-M1241791.html?vgid=G1821004",},
+            ]
+            },
+            {
+            country: "Sweden",
+            links: [
+            {label : "Helsdon Outdoors", url : "https://www.helsdonoutdoors.com/index.html?market=se#order",},
+            {label : "Addnature", url : "https://www.addnature.com/helsdon-outdoors-helsdon-hammock-M1241788.html?vgid=G1821001",},
+            {label : "Outdoorexperten", url : "https://www.outdoorexperten.se/p-74518-helsdon-hammock.aspx",},
+            {label : "Outnorth", url : "https://www.outnorth.se/helsdon-outdoors/helsdon-hammock#LightGreen",},
+            ]
+            },
+            {
+            country: "Switzerland",
+            links: [
+            {label : "Campz", url : "https://www.campz.ch/helsdon-outdoors-helsdon-haengematte-M1241791.html?vgid=G1821004",},
+            ]
+            },
+            {
+            country: "United Kingdom",
+            links: [
+            {label : "Addnature", url : "https://www.addnature.co.uk/helsdon-outdoors-helsdon-hammock-M1241791.html?vgid=G1821004",},
+            ]
+            },
+            {
+            country: "Other European Countries",
+            links: [
+            {label : "Outnorth", url : "https://www.outnorth.com/helsdon-outdoors/helsdon-hammock#LightGreen",},
+            ]
+            },
+            ]
+        });
+    </script>
+</head>
+
+<body class="" ng-app="myApp" ng-controller="myCtrl">
+    <div class="container py-4">
+        <div class="h5 mb-0 text-uppercase">Order Your</div>
+        <div class="h1 mb-0 text-uppercase text-primary">Helsdon Hammock</div>
+        <div class="py-3">
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                <div>
+                    <h6>Where are you ordering from?</h6>
+                    <div>
+                        <select class="form-select" aria-label="Order location" ng-model="customerlocation" ng-init="customerlocation='unspecified'">
+                            <option value="unspecified">-- select location --</option>
+                            <option value="Canada">Canada</option>
+                            <option value="United States">United States</option>
+                            <option value="Europe">Europe</option>
+                            <option value="Australia">Australia</option>
+                          </select>
+                    </div>
+                    <div>
+                        <button class="btn btn-link px-0 fw-bold btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#helpertextLocation" aria-expanded="false" aria-controls="helpertextLocation">Why do you need to know?</button>
+                    </div>
+                    <div>
+                        <div id="helpertextLocation" class="collapse">
+                            <div class="small fw-light">We want to make sure we provide you with the correct information so your purchase experience is as smooth as possible.  We have different payment methods and workflows depending on the country you're ordering from, so we ask up-front.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="" ng-show="customerlocation=='Canada' || customerlocation=='United States'">
+            <div class="d-flex justify-content-start mt-3 mb-4">
+                <div class="pt-1"><i class="fa-brands fa-cc-stripe fa-xl"></i></div>
+                <div class="w-100 small ps-2">We use Stripe to process our payments, so you can be confident that it's secure and reliable, and use the method of payment you prefer. <a href="https://stripe.com/" target="_blank" class="text-nowrap">Learn more about Stripe</a></div>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-12" ng-show="customerlocation=='Australia'">
+                <div class="card shadow h-100">
+                    <div class="card-body">
+                        <h6>Please contact our represenative <span class="text-nowrap">for Australia</span></h6>
+                        <div class="pt-3 ps-4">
+                            <div class="fw-bold">Perry Gamsby</div>
+                            <div class="d-flex justify-content-start">
+                                <div class="pe-2"><i class="fa-solid fa-envelope fa-sm"></i></div>
+                                <div><a href="mailto:perrygamsby@yahoo.com?subject=Helsdon Hammock Request">perrygamsby@yahoo.com</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12" ng-show="customerlocation=='Europe'">
+                <div class="card shadow h-100">
+                    <div class="card-body">
+                        <h6>Please contact our represenative <span class="text-nowrap">for Europe</span></h6>
+                        <div class="pt-3 ps-4">
+                            <div class="fw-bold">Anders Edelsgren</div>
+                            <div class="d-flex justify-content-start">
+                                <div class="pe-2"><i class="fa-solid fa-envelope fa-sm"></i></div>
+                                <div><a href="mailto:anders@helsdonoutdoors.com?subject=Helsdon Hammock Request">anders@helsdonoutdoors.com</a></div>
+                            </div>
+                            <div class="d-flex justify-content-start">
+                                <div class="pe-2"><i class="fa-solid fa-phone fa-sm"></i></div>
+                                <div>+46 70 32 111 65</div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div>
+                            <h6 class="">Or visit a retailer near you</h6>
+                            <div class="alert alert-primary d-flex small">
+                                <div><i class="fa-solid fa-circle-info me-2"></i></div>
+                                <div class="">It is recommended that you check with the retailer to confirm they have stock before travelling to the location.</div>
+                            </div>
+                            <div>
+                                <div ng-repeat="item in europeanretailers" ng-class="{'bg-light': $even}" class="d-flex flex-column flex-lg-row py-2 py-lg-3 px-3 border-top">
+                                    <div class="fw-bold">{{item.country}}</div>
+                                    <div>
+                                        <div class="d-flex flex-row flex-wrap ps-lg-3">
+                                            <div ng-repeat="link in item.links" class="py-1 py-lg-0">
+                                                <a ng-href="{{link.url}}" target="_blank" class="text-nowrap">{{link.label}}</a><span class="mx-2" ng-if="!$last">|</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6" ng-show="customerlocation=='Canada'">
+                <div class="card shadow h-100">
+                    <img src="./img/hammock-green.png" class="card-img-top" alt="Green Helsdon Hammock">
+                    <div class="card-body">
+                        <h5 class="card-title">Helsdon Green</h5>
+                        <p class="card-text small">The original, classic Helsdon hammock green. It feels like it belongs in nature
+                            without disappearing into it.</p>
+                    </div>
+                    <div class="card-footer bg-white border-top-0 mb-2">
+                        <div class="d-flex justify-content-start align-items-center">
+                            <div class="pe-2">
+                                <a href="https://buy.stripe.com/fZe8AA4qd42sbte5kr" target="_blank" class="btn btn-primary px-4 py-2 text-uppercase">Buy Now <i class="fa-regular fa-circle-right fa-beat ms-2"></i></a>
+                            </div>
+                            <div class="fw-light">from Canada</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6" ng-show="customerlocation=='Canada'">
+                <div class="card shadow h-100">
+                    <img src="./img/tradeshow-pink.png" class="card-img-top" alt="Pimk Helsdon Hammock">
+                    <div class="card-body">
+                        <h5 class="card-title">Pink</h5>
+                        <p class="card-text small">Great visibility and style. The pink Helsdon Hammock will really stand out no
+                            matter where on Earth you find yourself.</p>
+                    </div>
+                    <div class="card-footer bg-white border-top-0 mb-2">
+                        <div class="d-flex justify-content-start align-items-center">
+                            <div class="pe-2">
+                                <a href="https://buy.stripe.com/fZe8AA4qd42sbte5kr" target="_blank" class="btn btn-primary px-4 py-2 text-uppercase">Buy Now <i class="fa-regular fa-circle-right fa-beat ms-2"></i></a>
+                            </div>
+                            <div class="fw-light">from Canada</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6" ng-show="customerlocation=='United States'">
+                <div class="card shadow h-100">
+                    <img src="./img/hammock-green.png" class="card-img-top" alt="Green Helsdon Hammock">
+                    <div class="card-body">
+                        <h5 class="card-title">Helsdon Green</h5>
+                        <p class="card-text small">The original, classic Helsdon hammock green. It feels like it belongs in nature
+                            without disappearing into it.</p>
+                    </div>
+                    <div class="card-footer bg-white border-top-0 mb-2">
+                        <div class="d-flex justify-content-start align-items-center">
+                            <div class="pe-2">
+                                <a href="https://buy.stripe.com/bIYaIIaOBcyY40MeV0" target="_blank" class="btn btn-primary px-4 py-2 text-uppercase">Buy Now <i class="fa-regular fa-circle-right fa-beat ms-2"></i></a>
+                            </div>
+                            <div class="fw-light">from United States</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6" ng-show="customerlocation=='United States'">
+                <div class="card shadow h-100">
+                    <img src="./img/tradeshow-pink.png" class="card-img-top" alt="Pimk Helsdon Hammock">
+                    <div class="card-body">
+                        <h5 class="card-title">Pink</h5>
+                        <p class="card-text small">Great visibility and style. The pink Helsdon Hammock will really stand out no
+                            matter where on Earth you find yourself.</p>
+                    </div>
+                    <div class="card-footer bg-white border-top-0 mb-2">
+                        <div class="d-flex justify-content-start align-items-center">
+                            <div>
+                                <a href="https://buy.stripe.com/bIYaIIaOBcyY40MeV0" target="_blank" class="btn btn-primary px-4 py-2 text-uppercase">Buy Now <i class="fa-regular fa-circle-right fa-beat ms-2"></i></a>
+                            </div>
+                            <div class="fw-light">from United States</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+
+</html>
