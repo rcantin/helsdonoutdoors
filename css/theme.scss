@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700");
+
+$font-size-base: 1rem;
+$font-family-sans-serif: "Roboto Condensed", Arial, sans-serif;
+
+$primary: #27941B;
+
+$headings-font-weight:        700;
+
+.btn {white-space: nowrap;}
+.btn-primary {color: white !important;}
+
+// ----------------------------------------------------------------------------------------
+// import the entire bootstrap library
+// ----------------------------------------------------------------------------------------
+@import "./bootstrap";
+// ----------------------------------------------------------------------------------------
