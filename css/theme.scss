@@ -10,6 +10,17 @@ $headings-font-weight:        700;
 .btn {white-space: nowrap;}
 .btn-primary {color: white !important;}
 
+
+[aria-expanded="true"] .expanded-indicator {
+  transform: rotate(180deg);
+  transition: transform 200ms ease;
+}
+
+[aria-expanded="false"] .expanded-indicator {
+  transform: rotate(360deg);
+  transition: transform 200ms ease;
+}
+
 // ----------------------------------------------------------------------------------------
 // import the entire bootstrap library
 // ----------------------------------------------------------------------------------------
