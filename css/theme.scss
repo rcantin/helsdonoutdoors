@@ -5,7 +5,16 @@ $font-family-sans-serif: "Roboto Condensed", Arial, sans-serif;
 
 $primary: #27941B;
 
-$headings-font-weight:        700;
+$headings-font-weight: 700;
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
 
 .btn {white-space: nowrap;}
 .btn-primary {color: white !important;}
