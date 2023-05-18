@@ -14,7 +14,6 @@
     var app = angular.module("myApp", [])
         app.controller("myCtrl", function ($scope) {
 
-
             var url = location.search;
             const queryStringToObject = url =>
             [...new URLSearchParams(url.split('?')[1])].reduce(
@@ -22,13 +21,17 @@
                 {}
             );
             var queryParams = queryStringToObject(url);
-
             console.log(queryParams)
             $scope.customerlocation = 'unspecified';
+            $scope.showbanner = true;
             $scope.showlocationselection = true;
             if(queryParams.country) {
                 $scope.customerlocation = checkCountry(queryParams.country.toLowerCase()) ? queryParams.country.toLowerCase() : 'unspecified';
                 $scope.showlocationselection = false;
+            }
+            if(queryParams.showbanner) {
+                console.log(queryParams.showbanner)
+                $scope.showbanner = queryParams.showbanner.toLowerCase();
             }
 
             function checkCountry(country) {
@@ -148,7 +151,7 @@
 <body class="bg-light py-4 py-md-5 px-2" ng-app="myApp" ng-controller="myCtrl" ng-cloak>
     <div class="container">
         <div class="row g-4">
-            <div class="col-12">
+            <div class="col-12" ng-show={{showbanner}}>
                 <div class="d-flex justify-content-start align-items-center">
                     <div>
                         <img src="./img/icon.svg" alt="Helsdon Outdoors" height="50">
