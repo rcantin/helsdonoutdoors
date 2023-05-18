@@ -27,7 +27,6 @@
             $scope.showlocationselection = true;
             if(queryParams.country) {
                 $scope.customerlocation = checkCountry(queryParams.country.toLowerCase()) ? queryParams.country.toLowerCase() : 'unspecified';
-                $scope.showlocationselection = false;
             }
             if(queryParams.showbanner) {
                 $scope.showbanner = queryParams.showbanner.toLowerCase();
@@ -35,6 +34,7 @@
 
             function checkCountry(country) {
                 if(country=='canada' || country=='united states' || country=='europe' || country=='australia') {
+                    $scope.showlocationselection = false;
                     return true;
                 }
                 else {
