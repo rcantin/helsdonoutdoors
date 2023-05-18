@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="./css/theme.css" rel="stylesheet">
+    <link href="./scss/theme.css" rel="stylesheet">
     <link rel="icon" href="./img/icon.svg" type="image/svg+xml">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js" integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Cart Sample</title>
@@ -118,55 +118,133 @@
     </script>
 </head>
 
-<body class="" ng-app="myApp" ng-controller="myCtrl">
-    <div class="container py-4">
-        <div class="d-flex justify-content-start align-items-center">
-            <div>
-                <img src="./img/icon.svg" alt="Helsdon Outdoors" height="50">
-            </div>
-            <div class="ps-2">
-                <div class="h6 mb-0 text-uppercase">Order Your</div>
-                <div class="h2 mb-0 text-uppercase text-primary">Helsdon Hammock</div>
-            </div>
-        </div>
-        <div class="py-4">
-            <div class="card shadow mb-4">
-                <div class="card-body">
-                <div>
-                    <h6>Where are you ordering from?</h6>
+<body class="bg-light" ng-app="myApp" ng-controller="myCtrl" ng-cloak>
+    <div class="container py-5">
+
+        <div class="row g-4">
+            <div class="col-12">
+                <div class="d-flex justify-content-start align-items-center">
                     <div>
-                        <select class="form-select" aria-label="Order location" ng-model="customerlocation" ng-init="customerlocation='unspecified'">
-                            <option value="unspecified">-- select location --</option>
-                            <option value="Canada">Canada</option>
-                            <option value="United States">United States</option>
-                            <option value="Europe">Europe</option>
-                            <option value="Australia">Australia</option>
-                          </select>
+                        <img src="./img/icon.svg" alt="Helsdon Outdoors" height="50">
                     </div>
-                    <div class="pt-2">
-                        <button class="btn btn-link px-0 fw-bold btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#helpertextLocation" aria-expanded="false" aria-controls="helpertextLocation"><i class="fa-solid fa-circle-chevron-down expanded-indicator me-2"></i>Why do we need to know?</button>
+                    <div class="ps-2">
+                        <div class="h6 mb-0 text-uppercase">Order Your</div>
+                        <div class="h2 mb-0 text-uppercase text-primary">Helsdon Hammock</div>
                     </div>
-                    <div>
-                        <div id="helpertextLocation" class="collapse">
-                            <div class="small fw-light">We want to make sure we provide you with the correct information so your purchase experience is as smooth as possible.  We have different payment methods and workflows depending on the country you're ordering from, so we ask up-front in order to show you the correct options and take you to the right place.</div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card shadow-sm bg-white mb-2">
+                    <div class="card-body">
+                        <div>
+                            <h6>Where are you ordering from?</h6>
+                            <div>
+                                <select class="form-select" aria-label="Order location" ng-model="customerlocation" ng-init="customerlocation='unspecified'">
+                                    <option value="unspecified">-- select location --</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="United States">United States</option>
+                                    <option value="Europe">Europe</option>
+                                    <option value="Australia">Australia</option>
+                                </select>
+                            </div>
+                            <div class="pt-2">
+                                <button class="btn btn-link px-0 fw-bold btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#helpertextLocation" aria-expanded="false" aria-controls="helpertextLocation"><i class="fa-solid fa-circle-chevron-down expanded-indicator me-2"></i>Why do we need to know?</button>
+                            </div>
+                            <div>
+                                <div id="helpertextLocation" class="collapse">
+                                    <div class="small fw-light">We want to make sure we provide you with the correct information so your purchase experience is as smooth as possible.  We have different payment methods and workflows depending on the country you're ordering from, so we ask up-front in order to show you the correct options and take you to the right place.</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="pt-3 pb-4" ng-show="customerlocation=='Canada' || customerlocation=='United States'">
-            <div class="d-flex justify-content-start">
-                <div class="pt-1"><i class="fa-brands fa-cc-stripe fa-xl"></i></div>
-                <div class="w-100 small ps-2">We use Stripe to process our payments, so you can be confident that it's secure and reliable, and use the method of payment you prefer. <a href="https://stripe.com/" target="_blank" class="text-nowrap">Learn more about Stripe</a></div>
+            <div class="col-12" ng-show="customerlocation=='Canada' || customerlocation=='United States'">
+                <div>
+                    <div class="d-flex justify-content-start">
+                        <div class="pt-1"><i class="fa-brands fa-cc-stripe fa-xl"></i></div>
+                        <div class="w-100 small ps-2">We use Stripe to process our payments, so you can be confident that it's secure and reliable, and use the method of payment you prefer. <a href="https://stripe.com/" target="_blank" class="text-nowrap">Learn more about Stripe</a></div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row g-5">
+            <div class="col-12 col-md-6" ng-show="customerlocation=='Canada'">
+                <div class="card shadow-sm bg-white h-100">
+                    <img src="./img/hammock-green.png" class="card-img-top" alt="Green Helsdon Hammock">
+                    <div class="card-body">
+                        <h5 class="card-title">Helsdon Green</h5>
+                        <p class="card-text small">The original, classic Helsdon hammock green. It feels like it belongs in nature
+                            without disappearing into it.</p>
+                    </div>
+                    <div class="card-footer bg-white border-top-0 mb-2">
+                        <div class="d-flex justify-content-start align-items-center">
+                            <div class="pe-2">
+                                <a href="https://buy.stripe.com/fZe8AA4qd42sbte5kr" target="_blank" class="btn btn-primary px-4 py-2 text-uppercase">Buy Now <i class="fa-regular fa-circle-right fa-beat ms-2"></i></a>
+                            </div>
+                            <!-- <div class="fw-light">from Canada</div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6" ng-show="customerlocation=='Canada'">
+                <div class="card shadow-sm bg-white h-100">
+                    <img src="./img/tradeshow-pink.png" class="card-img-top" alt="Pimk Helsdon Hammock">
+                    <div class="card-body">
+                        <h5 class="card-title">Pink</h5>
+                        <p class="card-text small">Great visibility and style. The pink Helsdon Hammock will really stand out no
+                            matter where on Earth you find yourself.</p>
+                    </div>
+                    <div class="card-footer bg-white border-top-0 mb-2">
+                        <div class="d-flex justify-content-start align-items-center">
+                            <div class="pe-2">
+                                <a href="https://buy.stripe.com/fZe8AA4qd42sbte5kr" target="_blank" class="btn btn-primary px-4 py-2 text-uppercase">Buy Now <i class="fa-regular fa-circle-right fa-beat ms-2"></i></a>
+                            </div>
+                            <!-- <div class="fw-light">from Canada</div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6" ng-show="customerlocation=='United States'">
+                <div class="card shadow-sm bg-white h-100">
+                    <img src="./img/hammock-green.png" class="card-img-top" alt="Green Helsdon Hammock">
+                    <div class="card-body">
+                        <h5 class="card-title">Helsdon Green</h5>
+                        <p class="card-text small">The original, classic Helsdon hammock green. It feels like it belongs in nature
+                            without disappearing into it.</p>
+                    </div>
+                    <div class="card-footer bg-white border-top-0 mb-2">
+                        <div class="d-flex justify-content-start align-items-center">
+                            <div class="pe-2">
+                                <a href="https://buy.stripe.com/bIYaIIaOBcyY40MeV0" target="_blank" class="btn btn-primary px-4 py-2 text-uppercase">Buy Now <i class="fa-regular fa-circle-right fa-beat ms-2"></i></a>
+                            </div>
+                            <!-- <div class="fw-light">from United States</div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6" ng-show="customerlocation=='United States'">
+                <div class="card shadow-sm bg-white h-100">
+                    <img src="./img/tradeshow-pink.png" class="card-img-top" alt="Pimk Helsdon Hammock">
+                    <div class="card-body">
+                        <h5 class="card-title">Pink</h5>
+                        <p class="card-text small">Great visibility and style. The pink Helsdon Hammock will really stand out no
+                            matter where on Earth you find yourself.</p>
+                    </div>
+                    <div class="card-footer bg-white border-top-0 mb-2">
+                        <div class="d-flex justify-content-start align-items-center">
+                            <div class="pe-2">
+                                <a href="https://buy.stripe.com/bIYaIIaOBcyY40MeV0" target="_blank" class="btn btn-primary px-4 py-2 text-uppercase">Buy Now <i class="fa-regular fa-circle-right fa-beat ms-2"></i></a>
+                            </div>
+                            <!-- <div class="fw-light">from United States</div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col-12" ng-show="customerlocation=='Australia'">
-                <div class="card shadow h-100">
+                <div class="card shadow-sm bg-white h-100">
                     <div class="card-body">
                         <h6>Please contact our represenative <span class="text-nowrap">for Australia</span></h6>
                         <div class="pt-3 ps-4">
-                            <div class="fw-bold">Perry Gamsby</div>
+                            <div class="">Perry Gamsby</div>
                             <div class="d-flex justify-content-start">
                                 <div class="pe-2"><i class="fa-solid fa-envelope fa-sm"></i></div>
                                 <div><a href="mailto:perrygamsby@yahoo.com?subject=Helsdon Hammock Request">perrygamsby@yahoo.com</a></div>
@@ -176,11 +254,11 @@
                 </div>
             </div>
             <div class="col-12" ng-show="customerlocation=='Europe'">
-                <div class="card shadow h-100">
+                <div class="card shadow-sm bg-white h-100">
                     <div class="card-body">
                         <h6>Please contact our represenative <span class="text-nowrap">for Europe</span></h6>
                         <div class="pt-3 ps-4">
-                            <div class="fw-bold">Anders Edelsgren</div>
+                            <div class="">Anders Edelsgren</div>
                             <div class="d-flex justify-content-start">
                                 <div class="pe-2"><i class="fa-solid fa-envelope fa-sm"></i></div>
                                 <div><a href="mailto:anders@helsdonoutdoors.com?subject=Helsdon Hammock Request">anders@helsdonoutdoors.com</a></div>
@@ -193,13 +271,13 @@
                         <hr>
                         <div>
                             <h6 class="">Or visit a retailer near you</h6>
-                            <div class="alert alert-primary d-flex small">
-                                <div><i class="fa-solid fa-circle-info me-2"></i></div>
-                                <div class="">It is recommended that you check with the retailer to confirm they have stock before travelling to the location.</div>
+                            <div class="d-flex small pb-3 text-muted">
+                                <div><i class="fa-solid fa-circle-info me-1"></i></div>
+                                <div class="">It is recommended that you check with the retailer to confirm they have stock before visiting.</div>
                             </div>
                             <div>
                                 <div ng-repeat="item in europeanretailers" ng-class="{'bg-light': $even}" class="d-flex flex-column flex-lg-row py-2 py-lg-3 px-3 border-top">
-                                    <div class="fw-bold">{{item.country}}</div>
+                                    <div class="h6 mb-0">{{item.country}}</div>
                                     <div>
                                         <div class="d-flex flex-row flex-wrap ps-lg-3">
                                             <div ng-repeat="link in item.links" class="py-1 py-lg-0">
@@ -209,78 +287,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6" ng-show="customerlocation=='Canada'">
-                <div class="card shadow h-100">
-                    <img src="./img/hammock-green.png" class="card-img-top" alt="Green Helsdon Hammock">
-                    <div class="card-body">
-                        <h5 class="card-title">Helsdon Green</h5>
-                        <p class="card-text small">The original, classic Helsdon hammock green. It feels like it belongs in nature
-                            without disappearing into it.</p>
-                    </div>
-                    <div class="card-footer bg-white border-top-0 mb-2">
-                        <div class="d-flex justify-content-start align-items-center">
-                            <div class="pe-2">
-                                <a href="https://buy.stripe.com/fZe8AA4qd42sbte5kr" target="_blank" class="btn btn-primary px-4 py-2 text-uppercase">Buy Now <i class="fa-regular fa-circle-right fa-beat ms-2"></i></a>
-                            </div>
-                            <div class="fw-light">from Canada</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6" ng-show="customerlocation=='Canada'">
-                <div class="card shadow h-100">
-                    <img src="./img/tradeshow-pink.png" class="card-img-top" alt="Pimk Helsdon Hammock">
-                    <div class="card-body">
-                        <h5 class="card-title">Pink</h5>
-                        <p class="card-text small">Great visibility and style. The pink Helsdon Hammock will really stand out no
-                            matter where on Earth you find yourself.</p>
-                    </div>
-                    <div class="card-footer bg-white border-top-0 mb-2">
-                        <div class="d-flex justify-content-start align-items-center">
-                            <div class="pe-2">
-                                <a href="https://buy.stripe.com/fZe8AA4qd42sbte5kr" target="_blank" class="btn btn-primary px-4 py-2 text-uppercase">Buy Now <i class="fa-regular fa-circle-right fa-beat ms-2"></i></a>
-                            </div>
-                            <div class="fw-light">from Canada</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6" ng-show="customerlocation=='United States'">
-                <div class="card shadow h-100">
-                    <img src="./img/hammock-green.png" class="card-img-top" alt="Green Helsdon Hammock">
-                    <div class="card-body">
-                        <h5 class="card-title">Helsdon Green</h5>
-                        <p class="card-text small">The original, classic Helsdon hammock green. It feels like it belongs in nature
-                            without disappearing into it.</p>
-                    </div>
-                    <div class="card-footer bg-white border-top-0 mb-2">
-                        <div class="d-flex justify-content-start align-items-center">
-                            <div class="pe-2">
-                                <a href="https://buy.stripe.com/bIYaIIaOBcyY40MeV0" target="_blank" class="btn btn-primary px-4 py-2 text-uppercase">Buy Now <i class="fa-regular fa-circle-right fa-beat ms-2"></i></a>
-                            </div>
-                            <div class="fw-light">from United States</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6" ng-show="customerlocation=='United States'">
-                <div class="card shadow h-100">
-                    <img src="./img/tradeshow-pink.png" class="card-img-top" alt="Pimk Helsdon Hammock">
-                    <div class="card-body">
-                        <h5 class="card-title">Pink</h5>
-                        <p class="card-text small">Great visibility and style. The pink Helsdon Hammock will really stand out no
-                            matter where on Earth you find yourself.</p>
-                    </div>
-                    <div class="card-footer bg-white border-top-0 mb-2">
-                        <div class="d-flex justify-content-start align-items-center">
-                            <div class="pe-2">
-                                <a href="https://buy.stripe.com/bIYaIIaOBcyY40MeV0" target="_blank" class="btn btn-primary px-4 py-2 text-uppercase">Buy Now <i class="fa-regular fa-circle-right fa-beat ms-2"></i></a>
-                            </div>
-                            <div class="fw-light">from United States</div>
                         </div>
                     </div>
                 </div>
